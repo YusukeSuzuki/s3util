@@ -1,0 +1,35 @@
+{
+	"name": "s3util",
+	"description": "High level libs3 wrapper.",
+	"copyright": "Copyright © 2015, Yusuke Suzuki",
+	"authors": ["Yusuke Suzuki"],
+
+	"targetPath" : "build",
+
+	"configurations" : [
+		{
+			"name" : "debug",
+			"buildType" : "debug",
+			"targetType" : "library",
+			"sourcePaths" : ["source"],
+		},
+		{
+			"name" : "release",
+			"buildType" : "release",
+			"targetType" : "library",
+			"sourcePaths" : ["source"],
+		},
+		{
+			"name" : "test",
+			"targetType" : "executable",
+			"buildType" : "debug",
+			"buildOptions" : ["unittests", "debugMode", "debugInfo"],
+			"sourcePaths" : ["source", "test"],
+			"importPaths" : ["source"],
+		},
+	],
+
+	"dependencies": {
+		"s3" : "~master"
+	}
+}
